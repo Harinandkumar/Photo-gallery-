@@ -1,31 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>photo gallery</title>
+  <title>Photo Gallery</title>
   <link rel="stylesheet" href="./style.css">
-
 </head>
 <body>
 
 <div id="drag-container">
   <div id="spin-container">
-
     <img src="img2.jpg" alt="">
     <img src="img3.jpg" alt="">
     <img src="aman3.jpg" alt="">
     <img src="aman4.jpg" alt="">
     <img src="img4.jpg" alt="">
     <img src="img5.jpg" alt="">
- 
-    <p>I thought love was just an empty array, but you filled it with endless  happiness 😊</p>
+    <p>I thought love was just an empty array, but you filled it with endless happiness 😊</p>
   </div>
   <div id="ground"></div>
 </div>
 
-<div id="music-container"></div>
+<div id="music-container">
+  <!-- Audio element to play the song -->
+  <audio id="background-music" src="your-song-file.mp3" preload="auto"></audio>
+</div>
+
 <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
-  <script  src="./script.js"></script>
+<script src="./script.js"></script>
+<script>
+  // Automatically play music when the content loads
+  window.addEventListener('load', () => {
+    const audio = document.getElementById('background-music');
+    audio.play().catch(error => {
+      console.log('Playback prevented by browser:', error);
+    });
+  });
+</script>
 
 </body>
+</html>
