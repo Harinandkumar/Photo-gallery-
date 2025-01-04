@@ -1,88 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Photo Gallery with Love Button</title>
+  <title>photo gallery</title>
   <link rel="stylesheet" href="./style.css">
-  <style>
-    /* Styling the love button */
-    #audio-control {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 30px;
-      color: red;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: rgba(255, 192, 203, 0.8); /* Light pink background */
-      padding: 15px;
-      border-radius: 50%;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
 
-    #audio-control:hover {
-      transform: scale(1.2);
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
-    }
-
-    #audio-control.paused {
-      color: #fff;
-      background-color: red;
-    }
-  </style>
 </head>
 <body>
 
 <div id="drag-container">
   <div id="spin-container">
+
     <img src="img2.jpg" alt="">
     <img src="img3.jpg" alt="">
     <img src="aman3.jpg" alt="">
     <img src="aman4.jpg" alt="">
     <img src="img4.jpg" alt="">
     <img src="img5.jpg" alt="">
-    <p>I thought love was just an empty array, but you filled it with endless happiness 😊</p>
+ 
+    <p>I thought love was just an empty array, but you filled it with endless  happiness 😊</p>
   </div>
   <div id="ground"></div>
 </div>
 
-<div id="music-container">
-  <!-- Audio element -->
-  <audio id="background-music" src="your-song-file.mp3" preload="auto"></audio>
-</div>
+<div id="music-container"></div>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
-<!-- Love button for audio control -->
-<button id="audio-control" class="paused">
-  ❤️
-</button>
-
-<script>
-  // JavaScript for controlling audio playback
-  const audio = document.getElementById('background-music');
-  const audioControl = document.getElementById('audio-control');
-
-  // Automatically play music when the page loads
-  window.addEventListener('load', () => {
-    audio.play().catch(error => {
-      console.log('Playback prevented by browser:', error);
-    });
-  });
-
-  // Toggle play/pause when the love button is clicked
-  audioControl.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      audioControl.innerHTML = '💖'; // Change to filled heart
-      audioControl.classList.remove('paused');
-    } else {
-      audio.pause();
-      audioControl.innerHTML = '❤️'; // Change to regular heart
-      audioControl.classList.add('paused');
-    }
-  });
-</script>
+  <script  src="./script.js"></script>
 
 </body>
-</html>
